@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+    <title>Simple realtime chatroom</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="container mt-4">
+    <div class="title">
+        <h3>Realtime Chat Room</h3>
+    </div>
+
+    <div class="row">
+        <div class="col-8">
+            <div class="card">
+                <div class="card-header"></div>
+                <div class="card-body">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="username" placeholder="Change your username" >
+                        <div class="input-group-append">
+                            <button class="btn btn-warning" type="button" id="usernameBtn">Change</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="message-box">
+                    <ul class="list-group list-group-flush" id="message-list"></ul>
+                    <div class="info"></div>
+                </div>
+
+                <div class="card-footer">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="message" placeholder="Send new message" >
+                        <div class="input-group-append">
+                            <button class="btn btn-success" type="button" id="messageBtn">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header chat-users-header">Users Connected</div>
+                <div class="card-body chat-users-section">
+                    <ul class="chat-users-list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="users-count">
+        Online users: <span class="users-total"></span>
+    </div>
+
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/chatroom.js"></script>
+</body>
+</html>
